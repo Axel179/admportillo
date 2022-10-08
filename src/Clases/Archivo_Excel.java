@@ -30,11 +30,12 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 public class Archivo_Excel {
 
     Workbook wb;
-
+    
     public Archivo_Excel(File excel, JTable j){
 
         DefaultTableModel table = new DefaultTableModel();
         j.setModel(table);
+        new Hash();
         try {
             wb = WorkbookFactory.create(new FileInputStream(excel));
             Sheet hoja = wb.getSheetAt(0);
